@@ -1,0 +1,23 @@
+version: "3"
+services:
+  mysqldb:
+    image: mysql:8
+    networks: 
+      - employee-mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bootdb
+  employee-docker-test:
+    image: sql-boot-test
+    ports:
+      - "8181:8080"
+    networks: 
+      - employee-mysql
+    depends_on:
+      - mysqldb
+      
+networks: 
+  employee-mysql:
+      
+      
+ 
