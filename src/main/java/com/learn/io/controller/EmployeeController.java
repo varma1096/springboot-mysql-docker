@@ -20,6 +20,11 @@ public class EmployeeController {
 		
 		@Autowired
 		EmployeeRepo repo;
+		
+		@GetMapping("/hello")
+		public String hello() {
+			return "hello";
+		}
 	
 		@GetMapping("/employees")
 		public List<Employee> getEmployee(){
